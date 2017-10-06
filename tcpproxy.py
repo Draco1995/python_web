@@ -56,12 +56,12 @@ def main():
     #现在设置好我们的监听socket
     server_loop(local_host,local_port,remote_host,remote_port,receive_first)
 
-main()
+
 
 def proxy_handler(client_socket, remote_host, remote_port, receive_first):
     
     #连接远程主机
-    remote_socket = socket.socket(socket.AF_INET,socket,SOCK_STREAM)
+    remote_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     remote_socket.connect((remote_host,remote_port))
 
     #如果必要从远程主机接受数据
@@ -157,4 +157,4 @@ def response_handler(buffer):
     #执行包修改
     return buffer
 
-
+main()
